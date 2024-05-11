@@ -8,8 +8,10 @@ prob = 1.0
 G = nx.erdos_renyi_graph(num_nodes, prob)
 
 # Вычисление средней степени вершины
-total_degree = sum(dict(G.degree()).values())
-average_degree = total_degree / num_nodes
+total_degree = 0
+for node in G.nodes():
+    total_degree += G.degree(node)
+average_degree = float(total_degree) / len(G.nodes())
 
 # Ожидаемая средняя степень вершины по формуле модели Эрдёша-Реньи
 expected_degree = prob * (num_nodes - 1)
