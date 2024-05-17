@@ -1,8 +1,8 @@
 import networkx as nx
 
 # Заданные значения количества вершин и вероятности появления ребра
-num_nodes = 5
-prob = 1.0
+num_nodes = 9
+prob = 0.75
 
 # Генерация графа с помощью кода из лекции
 G = nx.erdos_renyi_graph(num_nodes, prob)
